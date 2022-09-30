@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="UTF-8">
+<base href="https://www.iculture.cc/demo/web_establish/biaobai_xiangcePPT/" />
+<title>回忆相册——520快乐</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Heebo:100,900|Open+Sans:300" rel="stylesheet">
+
+<style type="text/css">
+*{ font-family:微软雅黑}
+.slider__slide:nth-child(1) .slider__back, .slider__slide:nth-child(1) .slider__inner {
+	background-image: url(https://www.iculture.cc/demo/mn/mn4.jpg);
+}
+.slider__slide:nth-child(2) .slider__back, .slider__slide:nth-child(2) .slider__inner {
+	background-image: url(https://www.iculture.cc/demo/mn/mn3.jpg);
+}
+.slider__slide:nth-child(3) .slider__back, .slider__slide:nth-child(3) .slider__inner {
+	background-image: url(https://www.iculture.cc/demo/mn/mn2.jpg);
+}
+.slider__slide:nth-child(4) .slider__back, .slider__slide:nth-child(4) .slider__inner {
+	background-image: url(https://www.iculture.cc/demo/mn/mn7.jpg);
+}
+.slider__slide:nth-child(5) .slider__back, .slider__slide:nth-child(5) .slider__inner {
+	background-image: url(https://www.iculture.cc/demo/mn/mn12.jpg);
+}
+</style>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div class="slider">
+  <div class="slider__slide slider__slide--active" data-slide="1">
+    <div class="slider__wrap">
+      <div class="slider__back"></div>
+    </div>
+    <div class="slider__inner">
+      <div class="slider__content"> <a class="go-to-next">
+        <h1>相册一<br>
+          下一张</h1>
+        5201314</a> </div>
+    </div>
+  </div>
+  <div class="slider__slide" data-slide="2">
+    <div class="slider__wrap">
+      <div class="slider__back"></div>
+    </div>
+    <div class="slider__inner">
+      <div class="slider__content"> <a class="go-to-next">
+        <h1>相册二<br>
+          下一张</h1>
+        5201314</a> </div>
+    </div>
+  </div>
+  <div class="slider__slide" data-slide="3">
+    <div class="slider__wrap">
+      <div class="slider__back"></div>
+    </div>
+    <div class="slider__inner">
+      <div class="slider__content"> <a class="go-to-next">
+        <h1>相册三<br>
+          下一张</h1>
+        5201314</a> </div>
+    </div>
+  </div>
+  <div class="slider__slide" data-slide="4">
+    <div class="slider__wrap">
+      <div class="slider__back"></div>
+    </div>
+    <div class="slider__inner">
+      <div class="slider__content"> <a class="go-to-next">
+        <h1>相册四<br>
+          下一张</h1>
+        5201314</a> </div>
+    </div>
+  </div>
+  <div class="slider__slide" data-slide="5">
+    <div class="slider__wrap">
+      <div class="slider__back"></div>
+    </div>
+    <div class="slider__inner">
+      <div class="slider__content"> <a class="go-to-next">
+        <h1>相册五<br>
+          下一张</h1>
+        5201314</a> </div>
+    </div>
+  </div>
+  <div class="slider__indicators"></div>
+</div>
+<script src='../biaobai_xiangcePPT/js/jquery.1.7.1.min.js'></script> 
+
+
+<audio id="main_audio" autoplay="autoplay" preload="auto" loop> 
+ <source src="http://music.163.com/song/media/outer/url?id=1480769848.mp3" type="audio/mpeg" /> 
+</audio> 
+<div style="display:none"><script>
+
+window.onload = function(){
+             setInterval("toggleSound()",100);
+        }
+
+    function toggleSound() {
+                var music = document.getElementById("main_audio");
+                if (music.paused) {   
+                    music.paused=false;
+                    music.play(); 
+                }    
+        }
+		
+		
+$(document).ready(function(){
+  for (var i=1; i <= $('.slider__slide').length; i++){
+    $('.slider__indicators').append('<div class="slider__indicator" data-slide="'+i+'"></div>')
+  }
+  setTimeout(function(){
+    $('.slider__wrap').addClass('slider__wrap--hacked');
+  }, 1000);
+})
+
+function goToSlide(number){
+  $('.slider__slide').removeClass('slider__slide--active');
+  $('.slider__slide[data-slide='+number+']').addClass('slider__slide--active');
+}
+
+$('.slider__next, .go-to-next').on('click', function(){
+  var currentSlide = Number($('.slider__slide--active').data('slide'));
+  var totalSlides = $('.slider__slide').length;
+  currentSlide++
+  if (currentSlide > totalSlides){
+    currentSlide = 1;
+  }
+  goToSlide(currentSlide);
+})
+</script>
+</div></body>
+</html>
