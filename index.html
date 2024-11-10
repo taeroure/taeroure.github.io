@@ -1,137 +1,234 @@
-
 <!DOCTYPE html>
-<html >
+<html lang="en">
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>susu</title>
+    <style>
+     @charset "utf-8";
+*{
+	margin:0;
+	padding:0;
+}
+body{
 
-<title>回忆相册——520快乐</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css?family=Heebo:100,900|Open+Sans:300" rel="stylesheet">
+	/*background: url(../img/preview.png) ;*/
+	max-width: 100%;
+	min-width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size:100% 100%;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+}
+li{
+	list-style: none;
+}
+.box{
+	width:200px;
+	height:200px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size:100% 100%;
+	position: absolute;
+	margin-left: 42%;
+	margin-top: 22%;
+	-webkit-transform-style:preserve-3d;
+	-webkit-transform:rotateX(13deg);
+	-webkit-animation:move 5s linear infinite;
+}
+.minbox{
+	width:100px;
+	height:100px;
+	position: absolute;
+	left:50px;
+	top:30px;
+	-webkit-transform-style:preserve-3d;
+}
+.minbox li{
+	width:100px;
+	height:100px;
+	position: absolute;
+	left:0;
+	top:0;
+}
+.minbox li:nth-child(1){
+	background: url(../img/01.png) no-repeat 0 0;
+	-webkit-transform:translateZ(50px);
+}
+.minbox li:nth-child(2){
+	background: url(../img/02.png) no-repeat 0 0;
+	-webkit-transform:rotateX(180deg) translateZ(50px);
+}
+.minbox li:nth-child(3){
+	background: url(../img/03.png) no-repeat 0 0;
+	-webkit-transform:rotateX(-90deg) translateZ(50px);
+}
+.minbox li:nth-child(4){
+	background: url(../img/04.png) no-repeat 0 0;
+	-webkit-transform:rotateX(90deg) translateZ(50px);
+}
+.minbox li:nth-child(5){
+	background: url(../img/05.png) no-repeat 0 0;
+	-webkit-transform:rotateY(-90deg) translateZ(50px);
+}
+.minbox li:nth-child(6){
+	background: url(../img/06.png) no-repeat 0 0;
+	-webkit-transform:rotateY(90deg) translateZ(50px);
+}
+.maxbox li:nth-child(1){
+	background: url(../img/1.png) no-repeat 0 0;
+	-webkit-transform:translateZ(50px);
+}
+.maxbox li:nth-child(2){
+	background: url(../img/2.png) no-repeat 0 0;
+	-webkit-transform:translateZ(50px);
+}
+.maxbox li:nth-child(3){
+	background: url(../img/3.png) no-repeat 0 0;
+	-webkit-transform:rotateX(-90deg) translateZ(50px);
+}
+.maxbox li:nth-child(4){
+	background: url(../img/4.png) no-repeat 0 0;
+	-webkit-transform:rotateX(90deg) translateZ(50px);
+}
+.maxbox li:nth-child(5){
+	background: url(../img/5.png) no-repeat 0 0;
+	-webkit-transform:rotateY(-90deg) translateZ(50px);
+}
+.maxbox li:nth-child(6){
+	background: url(../img/6.png) no-repeat 0 0;
+	-webkit-transform:rotateY(90deg) translateZ(50px);
+}
+.maxbox{
+	width: 800px;
+	height: 400px;
+	position: absolute;
+	left: 0;
+	top: -20px;
+	-webkit-transform-style: preserve-3d;
+	
+}
+.maxbox li{
+	width: 200px;
+	height: 200px;
+	background: #fff;
+	border:1px solid #ccc;
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0.2;
+	-webkit-transition:all 1s ease;
+}
+.maxbox li:nth-child(1){
+	-webkit-transform:translateZ(100px);
+}
+.maxbox li:nth-child(2){
+	-webkit-transform:rotateX(180deg) translateZ(100px);
+}
+.maxbox li:nth-child(3){
+	-webkit-transform:rotateX(-90deg) translateZ(100px);
+}
+.maxbox li:nth-child(4){
+	-webkit-transform:rotateX(90deg) translateZ(100px);
+}
+.maxbox li:nth-child(5){
+	-webkit-transform:rotateY(-90deg) translateZ(100px);
+}
+.maxbox li:nth-child(6){
+	-webkit-transform:rotateY(90deg) translateZ(100px);
+}
+.box:hover ol li:nth-child(1){
+	-webkit-transform:translateZ(300px);
+	width: 400px;
+	height: 400px;
+	opacity: 0.8;
+	left: -100px;
+	top: -100px;
+}
+.box:hover ol li:nth-child(2){
+	-webkit-transform:rotateX(180deg) translateZ(300px);
+	width: 400px;
+	height: 400px;
+	opacity: 0.8;
+	left: -100px;
+	top: -100px;
+}
+.box:hover ol li:nth-child(3){
+	-webkit-transform:rotateX(-90deg) translateZ(300px);
+	width: 400px;
+	height: 400px;
+	opacity: 0.8;
+	left: -100px;
+	top: -100px;
+}
+.box:hover ol li:nth-child(4){
+	-webkit-transform:rotateX(90deg) translateZ(300px);
+	width: 400px;
+	height: 400px;
+	opacity: 0.8;
+	left: -100px;
+	top: -100px;
+}
+.box:hover ol li:nth-child(5){
+	-webkit-transform:rotateY(-90deg) translateZ(300px);
+	width: 400px;
+	height: 400px;
+	opacity: 0.8;
+	left: -100px;
+	top: -100px;
+}
+.box:hover ol li:nth-child(6){
+	-webkit-transform:rotateY(90deg) translateZ(300px);
+	width: 400px;
+	height: 400px;
+	opacity: 0.8;
+	left: -100px;
+	top: -100px;
+}
+@keyframes move{
+	0%{
+		-webkit-transform: rotateX(13deg) rotateY(0deg);
+	}
+	100%{
+		-webkit-transform:rotateX(13deg) rotateY(360deg);
+	}
+}
 
-<style type="text/css">
-*{ font-family:微软雅黑}
-.slider__slide:nth-child(1) .slider__back, .slider__slide:nth-child(1) .slider__inner {
-	background-image: url(https://www.iculture.cc/demo/mn/mn4.jpg);
-}
-.slider__slide:nth-child(2) .slider__back, .slider__slide:nth-child(2) .slider__inner {
-	background-image: url(https://www.iculture.cc/demo/mn/mn3.jpg);
-}
-.slider__slide:nth-child(3) .slider__back, .slider__slide:nth-child(3) .slider__inner {
-	background-image: url(https://www.iculture.cc/demo/mn/mn2.jpg);
-}
-.slider__slide:nth-child(4) .slider__back, .slider__slide:nth-child(4) .slider__inner {
-	background-image: url(https://www.iculture.cc/demo/mn/mn7.jpg);
-}
-.slider__slide:nth-child(5) .slider__back, .slider__slide:nth-child(5) .slider__inner {
-	background-image: url(https://www.iculture.cc/demo/mn/mn12.jpg);
-}
-</style>
-<link rel="stylesheet" href="css/style.css">
+
+    </style>
 </head>
-
-<body>
-<div class="slider">
-  <div class="slider__slide slider__slide--active" data-slide="1">
-    <div class="slider__wrap">
-      <div class="slider__back"></div>
-    </div>
-    <div class="slider__inner">
-      <div class="slider__content"> <a class="go-to-next">
-        <h1>相册一<br>
-          下一张</h1>
-        5201314</a> </div>
-    </div>
-  </div>
-  <div class="slider__slide" data-slide="2">
-    <div class="slider__wrap">
-      <div class="slider__back"></div>
-    </div>
-    <div class="slider__inner">
-      <div class="slider__content"> <a class="go-to-next">
-        <h1>相册二<br>
-          下一张</h1>
-        5201314</a> </div>
-    </div>
-  </div>
-  <div class="slider__slide" data-slide="3">
-    <div class="slider__wrap">
-      <div class="slider__back"></div>
-    </div>
-    <div class="slider__inner">
-      <div class="slider__content"> <a class="go-to-next">
-        <h1>相册三<br>
-          下一张</h1>
-        5201314</a> </div>
-    </div>
-  </div>
-  <div class="slider__slide" data-slide="4">
-    <div class="slider__wrap">
-      <div class="slider__back"></div>
-    </div>
-    <div class="slider__inner">
-      <div class="slider__content"> <a class="go-to-next">
-        <h1>相册四<br>
-          下一张</h1>
-        5201314</a> </div>
-    </div>
-  </div>
-  <div class="slider__slide" data-slide="5">
-    <div class="slider__wrap">
-      <div class="slider__back"></div>
-    </div>
-    <div class="slider__inner">
-      <div class="slider__content"> <a class="go-to-next">
-        <h1>相册五<br>
-          下一张</h1>
-        5201314</a> </div>
-    </div>
-  </div>
-  <div class="slider__indicators"></div>
-</div>
-<script src='http://apps.bdimg.com/libs/jquery/1.7.1/jquery.min.js'></script> 
-
-
+<body> 
 <audio id="main_audio" autoplay="autoplay" preload="auto" loop> 
  <source src="http://music.163.com/song/media/outer/url?id=1480769848.mp3" type="audio/mpeg" /> 
-</audio> 
-<div style="display:none"><script>
-
-window.onload = function(){
-             setInterval("toggleSound()",100);
-        }
-
-    function toggleSound() {
-                var music = document.getElementById("main_audio");
-                if (music.paused) {   
-                    music.paused=false;
-                    music.play(); 
-                }    
-        }
-		
-		
-$(document).ready(function(){
-  for (var i=1; i <= $('.slider__slide').length; i++){
-    $('.slider__indicators').append('<div class="slider__indicator" data-slide="'+i+'"></div>')
-  }
-  setTimeout(function(){
-    $('.slider__wrap').addClass('slider__wrap--hacked');
-  }, 1000);
-})
-
-function goToSlide(number){
-  $('.slider__slide').removeClass('slider__slide--active');
-  $('.slider__slide[data-slide='+number+']').addClass('slider__slide--active');
-}
-
-$('.slider__next, .go-to-next').on('click', function(){
-  var currentSlide = Number($('.slider__slide--active').data('slide'));
-  var totalSlides = $('.slider__slide').length;
-  currentSlide++
-  if (currentSlide > totalSlides){
-    currentSlide = 1;
-  }
-  goToSlide(currentSlide);
-})
-</script>
-</div></body>
+</audio>
+<div class="box">
+	<ul class="minbox">
+		<li><img src="img\01.png"></li>
+		<li><img src="img\02.png"></li>
+		<li><img src="img\03.png"></li>
+		<li><img src="img\04.png"></li>
+		<li><img src="img\05.png"></li>
+		<li><img src="img\06.png"></li>
+	</ul>
+	<ol class="maxbox">
+		<li><img src="img\1.png"></li>
+		<li><img src="img\2.png"></li>
+		<li><img src="img\3.png"></li>
+		<li><img src="img\4.png"></li>
+		<li><img src="img\5.png"></li>
+		<li><img src="img\6.png"></li>
+	</ol>
+</div>
+</body>
 </html>
+</body>
+</html>
+
+ 
+
