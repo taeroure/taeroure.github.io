@@ -1,232 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>susu</title>
-    <style>
-     @charset "utf-8";
-*{
-	margin:0;
-	padding:0;
-}
-body{
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="icon" href="./images/3.jpg">
+	<style>
+		html{
+			cursor:url('./images/13.png'),auto;/* 修改鼠标光标样式为自定义图标 */
+		}
+		body{
+			margin: 0;
+			background: url(./preview.jpg) ;
+		}
+		/*.bigBox{
+			/* 块级元素不设置width默认占满整行，而且下方不会出现滚动条 
+			因为直接设置width=100% 下方会出现横向滚动条（恶心）
+			*/
+			height: 200px;
+			background-color: skyblue;
+			border:1px solid red;
+			position: relative;
+			margin: 200px auto;
+			/* 斑马线滚动 */
+			background-image: linear-gradient(116.5deg,
+                skyblue 0%,
+                skyblue 25%,
+                #E0E0E0 25%,
+                #E0E0E0 50%,
+				skyblue 50%,
+                skyblue 75%,
+                #E0E0E0 75%,
+                #E0E0E0 100%
+            );*/
 
-	background: url(./preview.jpg) ;
-	max-width: 100%;
-	min-width: 100%;
-	height: 100%;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size:100% 100%;
-	position: absolute;
-	margin-left: auto;
-	margin-right: auto;
-}
-li{
-	list-style: none;
-}
-.box{
-	width:200px;
-	height:200px;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size:100% 100%;
-	position: absolute;
-	margin-left: 42%;
-	margin-top: 22%;
-	-webkit-transform-style:preserve-3d;
-	-webkit-transform:rotateX(13deg);
-	-webkit-animation:move 5s linear infinite;
-}
-.minbox{
-	width:100px;
-	height:100px;
-	position: absolute;
-	left:50px;
-	top:30px;
-	-webkit-transform-style:preserve-3d;
-}
-.minbox li{
-	width:100px;
-	height:100px;
-	position: absolute;
-	left:0;
-	top:0;
-}
-.minbox li:nth-child(1){
-	background: url(./1.jpg) no-repeat 0 0;
-	-webkit-transform:translateZ(50px);
-}
-.minbox li:nth-child(2){
-	background: url(./2.jpg) no-repeat 0 0;
-	-webkit-transform:rotateX(180deg) translateZ(50px);
-}
-.minbox li:nth-child(3){
-	background: url(./3.jpg) no-repeat 0 0;
-	-webkit-transform:rotateX(-90deg) translateZ(50px);
-}
-.minbox li:nth-child(4){
-	background: url(./4.jpg) no-repeat 0 0;
-	-webkit-transform:rotateX(90deg) translateZ(50px);
-}
-.minbox li:nth-child(5){
-	background: url(./5.jpg) no-repeat 0 0;
-	-webkit-transform:rotateY(-90deg) translateZ(50px);
-}
-.minbox li:nth-child(6){
-	background: url(./6.jpg) no-repeat 0 0;
-	-webkit-transform:rotateY(90deg) translateZ(50px);
-}
-.maxbox li:nth-child(1){
-	background: url(./1.jpg) no-repeat 0 0;
-	-webkit-transform:translateZ(50px);
-}
-.maxbox li:nth-child(2){
-	background: url(./2.jpg) no-repeat 0 0;
-	-webkit-transform:translateZ(50px);
-}
-.maxbox li:nth-child(3){
-	background: url(./3.jpg) no-repeat 0 0;
-	-webkit-transform:rotateX(-90deg) translateZ(50px);
-}
-.maxbox li:nth-child(4){
-	background: url(./4.jpg) no-repeat 0 0;
-	-webkit-transform:rotateX(90deg) translateZ(50px);
-}
-.maxbox li:nth-child(5){
-	background: url(./5.jpg) no-repeat 0 0;
-	-webkit-transform:rotateY(-90deg) translateZ(50px);
-}
-.maxbox li:nth-child(6){
-	background: url(./6.jpg) no-repeat 0 0;
-	-webkit-transform:rotateY(90deg) translateZ(50px);
-}
-.maxbox{
-	width: 800px;
-	height: 400px;
-	position: absolute;
-	left: 0;
-	top: -20px;
-	-webkit-transform-style: preserve-3d;
-	
-}
-.maxbox li{
-	width: 200px;
-	height: 200px;
-	background: #fff;
-	border:1px solid #ccc;
-	position: absolute;
-	left: 0;
-	top: 0;
-	opacity: 0.2;
-	-webkit-transition:all 1s ease;
-}
-.maxbox li:nth-child(1){
-	-webkit-transform:translateZ(100px);
-}
-.maxbox li:nth-child(2){
-	-webkit-transform:rotateX(180deg) translateZ(100px);
-}
-.maxbox li:nth-child(3){
-	-webkit-transform:rotateX(-90deg) translateZ(100px);
-}
-.maxbox li:nth-child(4){
-	-webkit-transform:rotateX(90deg) translateZ(100px);
-}
-.maxbox li:nth-child(5){
-	-webkit-transform:rotateY(-90deg) translateZ(100px);
-}
-.maxbox li:nth-child(6){
-	-webkit-transform:rotateY(90deg) translateZ(100px);
-}
-.box:hover ol li:nth-child(1){
-	-webkit-transform:translateZ(300px);
-	width: 400px;
-	height: 400px;
-	opacity: 0.8;
-	left: -100px;
-	top: -100px;
-}
-.box:hover ol li:nth-child(2){
-	-webkit-transform:rotateX(180deg) translateZ(300px);
-	width: 400px;
-	height: 400px;
-	opacity: 0.8;
-	left: -100px;
-	top: -100px;
-}
-.box:hover ol li:nth-child(3){
-	-webkit-transform:rotateX(-90deg) translateZ(300px);
-	width: 400px;
-	height: 400px;
-	opacity: 0.8;
-	left: -100px;
-	top: -100px;
-}
-.box:hover ol li:nth-child(4){
-	-webkit-transform:rotateX(90deg) translateZ(300px);
-	width: 400px;
-	height: 400px;
-	opacity: 0.8;
-	left: -100px;
-	top: -100px;
-}
-.box:hover ol li:nth-child(5){
-	-webkit-transform:rotateY(-90deg) translateZ(300px);
-	width: 400px;
-	height: 400px;
-	opacity: 0.8;
-	left: -100px;
-	top: -100px;
-}
-.box:hover ol li:nth-child(6){
-	-webkit-transform:rotateY(90deg) translateZ(300px);
-	width: 400px;
-	height: 400px;
-	opacity: 0.8;
-	left: -100px;
-	top: -100px;
-}
-@keyframes move{
-	0%{
-		-webkit-transform: rotateX(13deg) rotateY(0deg);
-	}
-	100%{
-		-webkit-transform:rotateX(13deg) rotateY(360deg);
-	}
-}
+            /*background-repeat: no-repeat;*/
+            background-size:100px 100%;
+            animation: gun 1s infinite linear;
+		}	
+		.smallBox{
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin: auto;
+			/* 开启3D动画 */
+			transform-style: preserve-3d;
+			/* 动画名字  动画时间  动画速度  动画循环 */
+			animation: move 5s linear infinite;
+		}
+		.smallBox div{
+			width: 100%;/*继承父级元素宽*/
+			height: 100%;/*继承父级元素高*/
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.smallBox div img{
+			width: 100%;/*继承父级元素宽*/
+			height: 100%;/*继承父级元素高*/
+		}
+		@keyframes move {
+			0%{
+				transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+			}
+			100%{
+				transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+			}
+		}
+		@keyframes gun {
+            0%{
 
-
-    </style>
+            }
+            100%{
+                background-position: 100px 0px;
+            }
+        }
+		/* 摆放正方体每个面的位置 */
+		.front{
+			transform: translateZ(100px);/* translate平移  前面-正值，后面-负值*/
+		}
+		.back{
+			transform: translateZ(-100px);/* translate平移  前面-正值，后面-负值*/
+		}
+		.left{
+			transform: translateX(-100px) rotateY(-90deg);
+		}
+		.right{
+			transform: translateX(100px) rotateY(90deg);
+		}
+		.top{
+			transform: translateY(-100px) rotateX(90deg);
+		}
+		.bottom{
+			transform: translateY(100px) rotateX(-90deg);
+		}
+		.front,.back,.left,.right,.top,.bottom{
+			transition: 0.5s;
+		}
+		/* 爆炸展开效果 */
+		.smallBox:hover .front{
+			transform: translateZ(200px);
+		}
+		.smallBox:hover .back{
+			transform: translateZ(-200px);
+		}
+		.smallBox:hover .left{
+			transform: translateX(-200px) rotateY(-90deg);
+		}
+		.smallBox:hover .right{
+			transform: translateX(200px) rotateY(90deg);
+		}
+		.smallBox:hover .top{
+			transform: translateY(-200px) rotateX(90deg);
+		}
+		.smallBox:hover .bottom{
+			transform: translateY(200px) rotateX(-90deg);
+		}
+	</style>
 </head>
-<body> 
+<body>
 <audio id="main_audio" autoplay="autoplay" preload="auto" loop> 
  <source src="http://music.163.com/song/media/outer/url?id=1480769848.mp3" type="audio/mpeg" /> 
 </audio>
-<div class="box">
-	<ul class="minbox">
-		<li><img src="img\1.jpg"></li>
-		<li><img src="img\2.jpg"></li>
-		<li><img src="img\3.jpg"></li>
-		<li><img src="img\4.jpg"></li>
-		<li><img src="img\5.jpg"></li>
-		<li><img src="img\6.jpg"></li>
-	</ul>
-	<ol class="maxbox">
-		<li><img src="img\1.jpg"></li>
-		<li><img src="img\2.jpg"></li>
-		<li><img src="img\3.jpg"></li>
-		<li><img src="img\4.jpg"></li>
-		<li><img src="img\5.jpg"></li>
-		<li><img src="img\6.jpg"></li>
-	</ol>
-</div>
-</body>
-</html>
+	<div class="bigBox">
+		<div class="smallBox">
+			<!-- 正方体中：前面的图片 -->
+			<div class="front">
+				<img src="./1.jpg">
+			</div>
+			<!-- 正方体中：后面的图片 -->
+			<div class="back">
+				<img src="./2.jpg">
+			</div>
+			<!-- 正方体中：左面的图片 -->
+			<div class="left">
+				<img src="./3.jpg">
+			</div>
+			<!-- 正方体中：右面的图片 -->
+			<div class="right">
+				<img src="./4.jpg">
+			</div>
+			<!-- 正方体中：上面的图片 -->
+			<div class="top">
+				<img src="./5.jpg">
+			</div>
+			<!-- 正方体中：下面的图片 -->
+			<div class="bottom">
+				<img src="./6.jpg">
+			</div>
+		</div>
+	</div>
 </body>
 </html>
 
